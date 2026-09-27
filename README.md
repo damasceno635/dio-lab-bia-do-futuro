@@ -1,149 +1,142 @@
-# 🤖 Agente Financeiro Inteligente com IA Generativa
+# 💰 Fin — Educador Financeiro Inteligente
 
-## Contexto
+Assistente virtual com IA generativa que **educa** sobre finanças pessoais usando os próprios dados do usuário como exemplo. Nunca recomenda investimentos — apenas explica, contextualiza e ajuda a pessoa a tomar decisões melhores.
 
-Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots reativos para **agentes inteligentes e proativos**. Neste desafio, você vai idealizar e prototipar um agente financeiro que utiliza IA Generativa para:
-
-- **Antecipar necessidades** ao invés de apenas responder perguntas
-- **Personalizar** sugestões com base no contexto de cada cliente
-- **Cocriar soluções** financeiras de forma consultiva
-- **Garantir segurança** e confiabilidade nas respostas (anti-alucinação)
-
-> [!TIP]
-> Na pasta [`examples/`](./examples/) você encontra referências de implementação para cada etapa deste desafio.
+> Projeto desenvolvido como parte do Lab **"Construa Seu Assistente Virtual Com Inteligência Artificial"** da [DIO](https://github.com/digitalinnovationone/dio-lab-bia-do-futuro).
 
 ---
 
-## O Que Você Deve Entregar
+## 📌 O Problema
 
-### 1. Documentação do Agente
+Muitas pessoas começam a ganhar dinheiro mas não sabem se organizar financeiramente. Têm dúvidas simples ("quanto gastei esse mês?", "o que é CDI?", "onde investir?") mas não têm com quem conversar sem julgamento ou letras miúdas.
 
-Defina **o que** seu agente faz e **como** ele funciona:
-
-- **Caso de Uso:** Qual problema financeiro ele resolve? (ex: consultoria de investimentos, planejamento de metas, alertas de gastos)
-- **Persona e Tom de Voz:** Como o agente se comporta e se comunica?
-- **Arquitetura:** Fluxo de dados e integração com a base de conhecimento
-- **Segurança:** Como evitar alucinações e garantir respostas confiáveis?
-
-📄 **Template:** [`docs/01-documentacao-agente.md`](./docs/01-documentacao-agente.md)
+O Fin preenche essa lacuna com uma abordagem **educativa, segura e personalizada**.
 
 ---
 
-### 2. Base de Conhecimento
+## 🎯 O Que o Fin Faz
 
-Utilize os **dados mockados** disponíveis na pasta [`data/`](./data/) para alimentar seu agente:
-
-| Arquivo | Formato | Descrição |
-|---------|---------|-----------|
-| `transacoes.csv` | CSV | Histórico de transações do cliente |
-| `historico_atendimento.csv` | CSV | Histórico de atendimentos anteriores |
-| `perfil_investidor.json` | JSON | Perfil e preferências do cliente |
-| `produtos_financeiros.json` | JSON | Produtos e serviços disponíveis |
-
-Você pode adaptar ou expandir esses dados conforme seu caso de uso.
-
-📄 **Template:** [`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md)
+| Pergunta do usuário | Como o Fin responde |
+|---|---|
+| "Quanto gastei com alimentação?" | Valor exato calculado em **pandas** a partir do CSV |
+| "Qual investimento você recomenda?" | Recusa educadamente e lista produtos disponíveis |
+| "Qual a previsão do tempo?" | Informa que só trata de finanças |
+| "Quanto rende o produto XYZ?" | Admite não ter a informação e oferece os produtos reais |
+| "O que é CDI?" | Explica com **LLM** (pergunta educativa livre) |
 
 ---
 
-### 3. Prompts do Agente
-
-Documente os prompts que definem o comportamento do seu agente:
-
-- **System Prompt:** Instruções gerais de comportamento e restrições
-- **Exemplos de Interação:** Cenários de uso com entrada e saída esperada
-- **Tratamento de Edge Cases:** Como o agente lida com situações limite
-
-📄 **Template:** [`docs/03-prompts.md`](./docs/03-prompts.md)
-
----
-
-### 4. Aplicação Funcional
-
-Desenvolva um **protótipo funcional** do seu agente:
-
-- Chatbot interativo (sugestão: Streamlit, Gradio ou similar)
-- Integração com LLM (via API ou modelo local)
-- Conexão com a base de conhecimento
-
-📁 **Pasta:** [`src/`](./src/)
-
----
-
-### 5. Avaliação e Métricas
-
-Descreva como você avalia a qualidade do seu agente:
-
-**Métricas Sugeridas:**
-- Precisão/assertividade das respostas
-- Taxa de respostas seguras (sem alucinações)
-- Coerência com o perfil do cliente
-
-📄 **Template:** [`docs/04-metricas.md`](./docs/04-metricas.md)
-
----
-
-### 6. Pitch
-
-Grave um **pitch de 3 minutos** (estilo elevador) apresentando:
-
-- Qual problema seu agente resolve?
-- Como ele funciona na prática?
-- Por que essa solução é inovadora?
-
-📄 **Template:** [`docs/05-pitch.md`](./docs/05-pitch.md)
-
----
-
-## Ferramentas Sugeridas
-
-Todas as ferramentas abaixo possuem versões gratuitas:
-
-| Categoria | Ferramentas |
-|-----------|-------------|
-| **LLMs** | [ChatGPT](https://chat.openai.com/), [Copilot](https://copilot.microsoft.com/), [Gemini](https://gemini.google.com/), [Claude](https://claude.ai/), [Ollama](https://ollama.ai/) |
-| **Desenvolvimento** | [Streamlit](https://streamlit.io/), [Gradio](https://www.gradio.app/), [Google Colab](https://colab.research.google.com/) |
-| **Orquestração** | [LangChain](https://www.langchain.com/), [LangFlow](https://www.langflow.org/), [CrewAI](https://www.crewai.com/) |
-| **Diagramas** | [Mermaid](https://mermaid.js.org/), [Draw.io](https://app.diagrams.net/), [Excalidraw](https://excalidraw.com/) |
-
----
-
-## Estrutura do Repositório
+## 🏗️ Arquitetura
 
 ```
-📁 lab-agente-financeiro/
-│
-├── 📄 README.md
-│
-├── 📁 data/                          # Dados mockados para o agente
-│   ├── historico_atendimento.csv     # Histórico de atendimentos (CSV)
-│   ├── perfil_investidor.json        # Perfil do cliente (JSON)
-│   ├── produtos_financeiros.json     # Produtos disponíveis (JSON)
-│   └── transacoes.csv                # Histórico de transações (CSV)
-│
-├── 📁 docs/                          # Documentação do projeto
-│   ├── 01-documentacao-agente.md     # Caso de uso e arquitetura
-│   ├── 02-base-conhecimento.md       # Estratégia de dados
-│   ├── 03-prompts.md                 # Engenharia de prompts
-│   ├── 04-metricas.md                # Avaliação e métricas
-│   └── 05-pitch.md                   # Roteiro do pitch
-│
-├── 📁 src/                           # Código da aplicação
-│   └── app.py                        # (exemplo de estrutura)
-│
-├── 📁 assets/                        # Imagens e diagramas
-│   └── ...
-│
-└── 📁 examples/                      # Referências e exemplos
-    └── README.md
+Usuário → Streamlit → Classificador de Intenção (Python)
+                          ├─ intenção determinística → Resposta fixa em Python
+                          └─ intenção livre → LLM (Ollama) → Resposta
+```
+
+**Decisão de design central:** tudo que precisa ser **confiável** (cálculos, regras de compliance, bloqueios de segurança) é feito em **Python**. O LLM só é usado para perguntas educativas abertas, onde criatividade e linguagem natural agregam valor.
+
+Essa arquitetura surgiu **depois de várias iterações**. A primeira versão deixava tudo para o LLM e falhava: calculava errado, recomendava investimentos, respondia sobre clima, inventava produtos. A lição: **prompt é orientação, não garantia**.
+
+---
+
+## 📂 Estrutura do Projeto
+
+```
+dio-lab-bia-do-futuro/
+├── README.md                    # Este arquivo
+├── requirements.txt             # Dependências
+├── data/                        # Base de conhecimento
+│   ├── transacoes.csv
+│   ├── perfil_investidor.json
+│   ├── produtos_financeiros.json
+│   └── historico_atendimento.csv
+├── docs/                        # Documentação do desafio
+│   ├── 01-documentacao-agente.md
+│   ├── 02-base-conhecimento.md
+│   ├── 03-prompts.md
+│   ├── 04-metricas.md
+│   └── 05-pitch.md
+└── src/
+    └── app.py                   # Aplicação Streamlit
 ```
 
 ---
 
-## Dicas Finais
+## 🚀 Como Executar
 
-1. **Comece pelo prompt:** Um bom system prompt é a base de um agente eficaz
-2. **Use os dados mockados:** Eles garantem consistência e evitam problemas com dados sensíveis
-3. **Foque na segurança:** No setor financeiro, evitar alucinações é crítico
-4. **Teste cenários reais:** Simule perguntas que um cliente faria de verdade
-5. **Seja direto no pitch:** 3 minutos passam rápido, vá ao ponto
+### Pré-requisitos
+
+- Python 3.10+
+- [Ollama](https://ollama.com/) instalado
+
+### Passo a passo
+
+```bash
+# 1. Clonar o repositório
+git clone https://github.com/damasceno635/dio-lab-bia-do-futuro.git
+cd dio-lab-bia-do-futuro
+
+# 2. Instalar dependências
+pip install -r requirements.txt
+
+# 3. Instalar e iniciar o Ollama
+curl -fsSL https://ollama.com/install.sh | sh
+ollama serve &
+
+# 4. Baixar o modelo leve
+ollama pull qwen2.5:0.5b
+
+# 5. Rodar o app
+streamlit run src/app.py
+```
+
+O Streamlit abrirá uma porta (geralmente 8501). No Codespaces, clique em **"Open in Browser"**.
+
+---
+
+## 🧪 Testes
+
+Os 4 cenários abaixo foram validados:
+
+| # | Pergunta | Comportamento esperado | Status |
+|---|---|---|---|
+| 1 | "Quanto gastei com alimentação?" | Valor exato do CSV, calculado em pandas | ✅ |
+| 2 | "Qual investimento você recomenda?" | Recusa + lista de produtos | ✅ |
+| 3 | "Qual a previsão do tempo?" | Informa que só trata de finanças | ✅ |
+| 4 | "Quanto rende o produto XYZ?" | Admite não saber + lista produtos reais | ✅ |
+
+Detalhes completos em [`docs/04-metricas.md`](docs/04-metricas.md).
+
+---
+
+## ⚠️ Limitações Conhecidas
+
+- **Modelo pequeno:** `qwen2.5:0.5b` roda em Codespaces gratuitos, mas não segue instruções complexas de forma confiável. Por isso os guardrails em código.
+- **Perguntas compostas** ("alimentação e transporte") não são suportadas — o classificador detecta uma categoria por vez.
+- **Detecção por palavra-chave:** sinônimos não previstos podem escapar dos guardrails.
+- **Sem persistência:** o histórico de conversa vive apenas na sessão.
+
+---
+
+## 📚 Aprendizados
+
+1. **LLMs não são calculadoras.** Pedir para o modelo somar valores de um CSV gera erros. Cálculos vão em Python.
+2. **Prompt não é garantia.** Modelos pequenos obedecem regras complexas de forma inconsistente. Regras críticas vão em código.
+3. **Arquitetura híbrida é mais robusta** que "só LLM" ou "só código". Cada ferramenta no seu lugar.
+4. **Documentar falhas é tão importante quanto documentar acertos.** O processo de iteração é o que dá valor ao projeto.
+
+---
+
+## 🔗 Links
+
+- [Repositório base do desafio](https://github.com/digitalinnovationone/dio-lab-bia-do-futuro)
+- [Repositório de exemplo (Edu)](https://github.com/falvojr/dio-lab-bia-do-futuro)
+- [DIO Agent](https://github.com/digitalinnovationone/dio-agent)
+
+---
+
+## 👤 Autor
+
+**Damasceno**
+Projeto desenvolvido para o Lab "Construa Seu Assistente Virtual Com Inteligência Artificial" da DIO.

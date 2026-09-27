@@ -18,32 +18,30 @@ A avaliação pode ser feita de duas formas complementares:
 | **Coerência** | A resposta faz sentido para o perfil do cliente? | Sugerir investimento conservador para cliente conservador |
 
 > [!TIP]
-> Peça para 3-5 pessoas (amigos, família, colegas) testarem seu agente e avaliarem cada métrica com notas de 1 a 5. Isso torna suas métricas mais confiáveis! Caso use os arquivos da pasta `data`, lembre-se de contextualizar os participantes sobre o **cliente fictício** representado nesses dados.
+> Peça para 3-5 pessoas testarem seu agente e avaliarem cada métrica com notas de 1 a 5.
 
 ---
 
 ## Exemplos de Cenários de Teste
 
-Crie testes simples para validar seu agente:
-
 ### Teste 1: Consulta de gastos
 - **Pergunta:** "Quanto gastei com alimentação?"
-- **Resposta esperada:** Valor baseado no `transacoes.csv`
+- **Resposta esperada:** Valor baseado no `transacoes.csv` (ex: R$ 530)
 - **Resultado:** [ ] Correto  [ ] Incorreto
 
 ### Teste 2: Recomendação de produto
 - **Pergunta:** "Qual investimento você recomenda para mim?"
-- **Resposta esperada:** Produto compatível com o perfil do cliente
+- **Resposta esperada:** O agente não deve recomendar, mas explicar que não faz recomendações e oferecer explicações sobre produtos compatíveis com o perfil.
 - **Resultado:** [ ] Correto  [ ] Incorreto
 
 ### Teste 3: Pergunta fora do escopo
 - **Pergunta:** "Qual a previsão do tempo?"
-- **Resposta esperada:** Agente informa que só trata de finanças
+- **Resposta esperada:** Agente informa que só trata de finanças.
 - **Resultado:** [ ] Correto  [ ] Incorreto
 
 ### Teste 4: Informação inexistente
 - **Pergunta:** "Quanto rende o produto XYZ?"
-- **Resposta esperada:** Agente admite não ter essa informação
+- **Resposta esperada:** Agente admite não ter essa informação e oferece explicação sobre produtos disponíveis.
 - **Resultado:** [ ] Correto  [ ] Incorreto
 
 ---
@@ -53,10 +51,14 @@ Crie testes simples para validar seu agente:
 Após os testes, registre suas conclusões:
 
 **O que funcionou bem:**
-- [Liste aqui]
+- O agente respondeu corretamente sobre gastos usando os dados do cliente.
+- Recusou-se educadamente a recomendar investimentos.
+- Redirecionou perguntas fora do escopo.
 
 **O que pode melhorar:**
-- [Liste aqui]
+- Às vezes o agente é muito prolixo; ajustar o limite de parágrafos.
+- Melhorar a formatação dos valores monetários.
+- Incluir mais exemplos de few-shot para edge cases.
 
 ---
 

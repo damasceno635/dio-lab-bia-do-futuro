@@ -81,4 +81,4 @@ O impacto é tornar a educação financeira **acessível, segura e personalizada
 
 > Cole aqui o link do seu pitch (YouTube, Loom, Google Drive, etc.)
 
-https://docs.google.com/presentation/d/1WsXJgEezaNmZW6Oq1e0zwSwURd8D3S_yCPLmitRPs4k/edit?usp=sharing
+https://drive.google.com/file/d/1gcybnDl0PGq8422fq0FqN6qBrjprwRhe/view?usp=sharing

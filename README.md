@@ -133,6 +133,7 @@ Detalhes completos em [`docs/04-metricas.md`](docs/04-metricas.md).
 - [Repositório base do desafio](https://github.com/digitalinnovationone/dio-lab-bia-do-futuro)
 - [Repositório de exemplo (Edu)](https://github.com/falvojr/dio-lab-bia-do-futuro)
 - [DIO Agent](https://github.com/digitalinnovationone/dio-agent)
+- [Link Pitch](https://drive.google.com/file/d/1gcybnDl0PGq8422fq0FqN6qBrjprwRhe/view?usp=sharing)
 
 ---
 
